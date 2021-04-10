@@ -5,7 +5,7 @@
 //use this for valira Javascript.
 'use strict';
 
-//2.Variable
+//2.Variable, rw(read/write)
 //let (added in ES6)
 
 let name = 'ellie'; //선언
@@ -41,22 +41,32 @@ var age;
 
 //ES6로 개발후 익스플로러 배포시 BABEL로 버전 조절후 배포
 
-//3.Contants
-//favor immutable data type always for a few reasons:
-//-security
-//-thread safety
-//-reduce human mistakes
+//3.Contant,r(read only)
+//use const whenever possible.
+//only use let if variable needs to change
 const daysInWeek = 7;
 const maxNumber = 5;
 //즉, mutable data type =>let
 //  immutable data type =>const
 
+//Note!
+//Immutable data types: premitive types, frozen objects (i.e. object.freeze())
+                   // 값이통채로 바뀌는 것
+//Mutable data type: all objects by default are mutable in JS
 
+//favor immutable data type always for a few reasons:
+//-security
+//-thread safety
+//-reduce human mistakes
 
 //4. Variable types
 //primitive, single item: number, string, boolean,
 //                        null, undefined,symbol
+//primitive타입의 경우 메모리에 값이 바로 저장된다
+
 //object, box container(single item을 묶어서 관리)
+//object타입의 경우는 ref를 통해서 실제 메모리를 찾아간다
+
 //function, first-class function <- 함수를 변수처럼 관리가능
 
 const count = 17; //integer
