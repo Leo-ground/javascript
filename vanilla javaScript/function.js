@@ -62,12 +62,12 @@ let globalMessage ='global'; //global variable
 function printMessage(){
     let message = 'hello';
     console.log(message); //local variable
-    consele.log(globalMessage);
+ //   consele.log(globalMessage);
     function printAnother() {
         console.log(message);
         let childMessage = 'hello';
     }
-    console.log(childMessage); //오류발생
+ //   console.log(childMessage); //오류발생
     //즉 안에는 밖이 보이고 밖에서는 안이 안보인다.
 
     return undefined; //default 생략가능
@@ -148,7 +148,7 @@ const simplePrint = function () {
     console.log('simplePrint!');
 };
 
-const simplePrint = () => console.log('simplePrint!');
+//const simplePrint = () => console.log('simplePrint!');
 const add =(a,b)=> a+b;
 const simpleMultiply = (a,b)=>{
     //do something more
@@ -171,3 +171,60 @@ hello();
 //Fun quiz time
 //function calculate(command, a, b)
 //command: (add, substract, divide, multiply, remainder)
+
+function calculate(command, a, b){
+    if(typeof a ==='number' && typeof b ==='number'){
+            switch(command){
+                case 'add':
+                    console.log(`add: ${a+b}`);
+                    break;
+                case 'substract':
+                    
+                    console.log(`substract: ${a-b}`);
+                    break;
+                case 'divide':
+                    if(b===0){
+                        console.log('it is infinit');
+                        break;
+                    }
+                    console.log(`divide: ${a/b}`);
+                    break;
+                case 'multiply':
+                    console.log(`multiply: ${a*b}`);
+                    break;
+                case 'remainder':
+                    console.log(`remainder: ${a%b}`);
+                    break;
+            }
+        
+    }else{
+    console.log('please check your input value')}
+}
+
+calculate('add',1,2);
+calculate('substract',1,2);
+calculate('divide',1,0);
+calculate('multiply',1,2);
+calculate('remainder',1,2);
+calculate('ddd',1,2);
+calculate('dddd','dd','d');
+
+
+//ellie answer
+function calculate1(command, a, b){
+    switch(command){
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'divide':
+            return a / b;
+        case 'multiply':
+            return a * b;
+        case 'remainder':
+            return a % b;
+        default:
+            throw Error('unknown command');
+    }
+}
+console.log(calculate('add',2,3));
